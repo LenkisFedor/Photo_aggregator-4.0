@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo_aggregator", "Photo_aggregator\Photo_aggregator.csproj", "{D50A1239-7B3D-4673-908A-B861F820CFBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{E01FAEA7-CA93-4C2A-A577-AA5AA7BFC8D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{CF4C5AC1-AF12-4534-8DB7-14DDB2BFA399}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{C0C809AC-450E-4FCD-BE9C-41E75460114C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo_aggregator.DAL", "Photo_aggregator.DAL\Photo_aggregator.DAL.csproj", "{A8CA0633-78B2-4ED7-9059-C38993A14513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo_aggregator.Domain", "Photo_aggregator.Domain\Photo_aggregator.Domain.csproj", "{618A0C1C-974E-4184-9160-228C15329F8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo_aggregator.Service", "Photo_aggregator.Service\Photo_aggregator.Service.csproj", "{DF13C103-B62F-4BC8-BD7B-2509ECF755BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D50A1239-7B3D-4673-908A-B861F820CFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50A1239-7B3D-4673-908A-B861F820CFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50A1239-7B3D-4673-908A-B861F820CFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50A1239-7B3D-4673-908A-B861F820CFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8CA0633-78B2-4ED7-9059-C38993A14513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CA0633-78B2-4ED7-9059-C38993A14513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CA0633-78B2-4ED7-9059-C38993A14513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CA0633-78B2-4ED7-9059-C38993A14513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618A0C1C-974E-4184-9160-228C15329F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618A0C1C-974E-4184-9160-228C15329F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618A0C1C-974E-4184-9160-228C15329F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618A0C1C-974E-4184-9160-228C15329F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF13C103-B62F-4BC8-BD7B-2509ECF755BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF13C103-B62F-4BC8-BD7B-2509ECF755BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF13C103-B62F-4BC8-BD7B-2509ECF755BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF13C103-B62F-4BC8-BD7B-2509ECF755BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8CA0633-78B2-4ED7-9059-C38993A14513} = {E01FAEA7-CA93-4C2A-A577-AA5AA7BFC8D5}
+		{618A0C1C-974E-4184-9160-228C15329F8C} = {CF4C5AC1-AF12-4534-8DB7-14DDB2BFA399}
+		{DF13C103-B62F-4BC8-BD7B-2509ECF755BE} = {C0C809AC-450E-4FCD-BE9C-41E75460114C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28518D42-8522-4298-940A-C9B553CB6662}
+	EndGlobalSection
+EndGlobal

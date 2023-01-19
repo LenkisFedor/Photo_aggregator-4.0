@@ -1,0 +1,84 @@
+﻿@model Photo_aggregator.Domain.ViewModels.RegisterViewModel
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Регистрация";
+}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Register</title>
+    <link rel="stylesheet" href="~/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="~/css/Register.css" media="screen">
+    <script class="u-script" type="text/javascript" src="~/js/jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="~/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.3.5, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+    <script type="application/ld+json">
+        {
+                "@@context": "http://schema.org",
+                "@@type": "Organization",
+                "name": ""
+        }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Register">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode" data-lang="ru">
+    <section class="u-clearfix u-section-1" id="sec-22d5">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-align-center u-form u-form-1">
+                <form  asp-controller="Account" asp-action="Register" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"  name="form-1" style="padding: 10px;">
+                    <div class="u-form-group u-form-name">
+                        <label for="name-b90c" class="u-label">Логин</label>
+                        <input type="text" asp-for="Login" placeholder="Придумайте логин" id="name-b90c" name="Login" class="u-border-3 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                    </div>
+                    <div class="u-form-email u-form-group">
+                        <label for="email-b90c" class="u-label">Эл. почта</label>
+                        <input type="email" asp-for="Email" placeholder="Введите Ваш email адрес" id="email-b90c" name="Email" class="u-border-3 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                    </div>
+                    <div class="u-form-group u-form-group-3">
+                        <label for="text-809c" class="u-label">Пароль</label>
+                        <input type="text" asp-for="Password" placeholder="Пароль" id="text-809c" name="Password" class="u-border-3 u-border-grey-30 u-input u-input-rectangle u-white">
+                    </div>
+                    <div class="u-form-group">
+                        <label for="message-b90c" class="u-label">Номер телефона</label>
+                        <input asp-for="PhoneNumber" placeholder="+7(ххх)-хх хх хх" rows="4" cols="50" id="message-b90c" name="PhoneNumber" class="u-border-3 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
+                    </div>
+                    <div class="u-align-center u-form-group u-form-submit">
+                        <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-2-base u-radius-50 u-btn-1">
+                            Регистрация<br>
+                        </a>
+                        <input type="submit" value="submit" class="u-form-control-hidden">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3b37">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-small-text u-text u-text-variant u-text-1" data-lang-en="Sample text. Click to select the Text Element.">Sample text. Click to select the Text Element.</p>
+        </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+            <span>Website Templates</span>
+        </a>
+        <p class="u-text">
+            <span>created with</span>
+        </p>
+        <a class="u-link" href="" target="_blank">
+            <span>Website Builder Software</span>
+        </a>.
+    </section>
+
+</body>
+</html>
