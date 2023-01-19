@@ -62,7 +62,7 @@ namespace Photo_aggregator.Controllers
             return View();
         }
 
-        public IActionResult Requests()
+        public IActionResult Profile()
         {
             return View();
         }
