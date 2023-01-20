@@ -16,6 +16,7 @@ namespace Photo_aggregator.Controllers
             _profileService = profileService;
             this.context = context;
         }
+
         public ActionResult PhotographerProfile()
         {
             var requests = context.Requests
