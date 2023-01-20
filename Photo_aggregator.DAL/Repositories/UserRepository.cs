@@ -9,9 +9,9 @@ namespace Photo_aggregator.DAL.Repositories
 {
     public class UserRepository :IBaseRepository<User>
     {
-        private readonly Photo_aggregatorContext _db;
+        private readonly photo_aggrContext _db;
 
-        public UserRepository(Photo_aggregatorContext db)
+        public UserRepository(photo_aggrContext db)
         {
             _db = db;
         }

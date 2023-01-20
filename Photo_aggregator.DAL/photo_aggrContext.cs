@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Photo_aggregator.Domain;
 
-namespace Photo_aggregator.DAL
+namespace Photo_aggregator
 {
-    public partial class Photo_aggregatorContext : DbContext
+    public partial class photo_aggrContext : DbContext
     {
-        public Photo_aggregatorContext()
+        public photo_aggrContext()
         {
         }
 
-        public Photo_aggregatorContext(DbContextOptions<Photo_aggregatorContext> options)
+        public photo_aggrContext(DbContextOptions<photo_aggrContext> options)
             : base(options)
         {
         }
@@ -22,6 +23,7 @@ namespace Photo_aggregator.DAL
         public virtual DbSet<Photographer> Photographers { get; set; } = null!;
         public virtual DbSet<Publication> Publications { get; set; } = null!;
         public virtual DbSet<Request> Requests { get; set; } = null!;
+        public virtual DbSet<RequestList> RequestLists { get; set; } = null!;
         public virtual DbSet<Review> Reviews { get; set; } = null!;
         public virtual DbSet<Service> Services { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
@@ -31,7 +33,7 @@ namespace Photo_aggregator.DAL
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseNpgsql("Host=192.168.50.205; Port=5432; Database=Photo_aggregator; Username=postgres; Password=postgres");
+                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=photo_aggr;Username=postgres;Password=postgres");
             }
         }
 
@@ -136,11 +138,19 @@ namespace Photo_aggregator.DAL
                     .HasColumnName("photographer_surname");
 
                 entity.Property(e => e.PhotographerWorkExperience).HasColumnName("photographer_work_experience");
+
+                entity.HasOne(d => d.PhotographerNavigation)
+                    .WithOne(p => p.Photographer)
+                    .HasForeignKey<Photographer>(d => d.PhotographerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("photographers_id_fk");
             });
 
             modelBuilder.Entity<Publication>(entity =>
             {
                 entity.ToTable("publications");
+
+                entity.HasIndex(e => e.PublicationId, "index_publication_id");
 
                 entity.Property(e => e.PublicationId)
                     .ValueGeneratedNever()
@@ -167,7 +177,7 @@ namespace Photo_aggregator.DAL
                     .ValueGeneratedNever()
                     .HasColumnName("request_id");
 
-                entity.Property(e => e.CleintId).HasColumnName("cleint_id");
+                entity.Property(e => e.ClientId).HasColumnName("client_id");
 
                 entity.Property(e => e.CreationDate).HasColumnName("creation_date");
 
@@ -177,9 +187,9 @@ namespace Photo_aggregator.DAL
 
                 entity.Property(e => e.ServiceTypeId).HasColumnName("service_type_id");
 
-                entity.HasOne(d => d.Cleint)
+                entity.HasOne(d => d.Client)
                     .WithMany(p => p.Requests)
-                    .HasForeignKey(d => d.CleintId)
+                    .HasForeignKey(d => d.ClientId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("client_id_fk");
 
@@ -194,6 +204,25 @@ namespace Photo_aggregator.DAL
                     .HasForeignKey(d => d.ServiceTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("service_type_id_fk");
+            });
+
+            modelBuilder.Entity<RequestList>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("request_list");
+
+                entity.Property(e => e.ClientId).HasColumnName("client_id");
+
+                entity.Property(e => e.CreationDate).HasColumnName("creation_date");
+
+                entity.Property(e => e.ExecutionDate).HasColumnName("execution_date");
+
+                entity.Property(e => e.PhotographerId).HasColumnName("photographer_id");
+
+                entity.Property(e => e.RequestId).HasColumnName("request_id");
+
+                entity.Property(e => e.ServiceTypeId).HasColumnName("service_type_id");
             });
 
             modelBuilder.Entity<Review>(entity =>
@@ -226,6 +255,8 @@ namespace Photo_aggregator.DAL
             modelBuilder.Entity<Service>(entity =>
             {
                 entity.ToTable("services");
+
+                entity.HasIndex(e => e.ServiceId, "index_service_id");
 
                 entity.Property(e => e.ServiceId)
                     .ValueGeneratedNever()

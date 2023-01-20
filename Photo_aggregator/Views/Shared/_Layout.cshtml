@@ -40,9 +40,6 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" asp-area="" asp-controller="Home" asp-action="Requests">Аккаунт</a>
-                            </li>
-                            <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" method="post" asp-controller="Account" asp-action="Logout">Выход</a>
                             </li>
                             if (User.IsInRole("photographer"))

@@ -21,7 +21,7 @@ namespace Photo_aggregator
 			builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
 
 			var connection = builder.Configuration.GetConnectionString("DefaultConnection");
-			builder.Services.AddDbContext<Photo_aggregatorContext>(options =>
+			builder.Services.AddDbContext<photo_aggrContext>(options =>
 				options.UseNpgsql(connection));
 
 			builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

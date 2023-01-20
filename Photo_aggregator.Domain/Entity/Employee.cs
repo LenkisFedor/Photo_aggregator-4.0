@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Photo_aggregator.DAL
+namespace Photo_aggregator
 {
     public partial class Employee
     {

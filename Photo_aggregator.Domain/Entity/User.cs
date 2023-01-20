@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Photo_aggregator.DAL
+namespace Photo_aggregator
 {
     public partial class User
     {
@@ -17,6 +17,7 @@ namespace Photo_aggregator.DAL
 
         public virtual Client? Client { get; set; }
         public virtual Employee? Employee { get; set; }
+        public virtual Photographer? Photographer { get; set; }
         public virtual ICollection<Request> Requests { get; set; }
     }
 }

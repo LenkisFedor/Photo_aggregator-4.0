@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Photo_aggregator.DAL;
+using Photo_aggregator.Service;
 using Photo_aggregator.Service.Interfaces;
 
 namespace Photo_aggregator.Controllers
@@ -9,9 +10,9 @@ namespace Photo_aggregator.Controllers
     {
         private readonly IProfileService _profileService;
 
-        private readonly Photo_aggregatorContext context;
+        private readonly photo_aggrContext context;
 
-        public ProfileController(IProfileService profileService, Photo_aggregatorContext context)
+        public ProfileController(IProfileService profileService, photo_aggrContext context)
         {
             _profileService = profileService;
             this.context = context;
@@ -23,7 +24,7 @@ namespace Photo_aggregator.Controllers
                 .Where(req => req.PhotographerId == (context.Users.First(user => user.UserLogin == User.Identity.Name).UserId))
                 .ToList();
 
-            return View(requests);
+            return View(context);
         }
 
         // GET: ProfileController/Details/5

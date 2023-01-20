@@ -1,4 +1,4 @@
-﻿@model List<Photo_aggregator.Domain.ViewModels.RequestViewModel>
+﻿@model photo_aggrContext
 @{
     Layout = "_Layout";
     ViewBag.Title = "Профиль";
@@ -156,11 +156,11 @@
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">Дедлайн</td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">Тип услуги</td>
                             </tr>
-                            @foreach (var item in Model)
+                            @foreach (var item in Model.Requests.Where(req => req.PhotographerId == (Model.Users.First(user => user.UserLogin == User.Identity.Name).UserId)).ToList())
                             {
                                 <tr style="height: 65px;">
-                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.Cleint.ClientName</td>
-                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.Cleint.ClientNumber</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@Model.Clients.First(client => client.ClientId == item.ClientId).ClientName</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@Model.Clients.First(client => client.ClientId == item.ClientId).ClientNumber</td>
                                     <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.CreationDate</td>
                                     <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.ExecutionDate</td>
                                     <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.ServiceType</td>
