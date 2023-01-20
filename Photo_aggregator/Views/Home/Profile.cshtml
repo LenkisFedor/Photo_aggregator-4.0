@@ -1,4 +1,5 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -39,7 +40,7 @@
         <h1 class="u-align-center u-text u-text-default u-text-1">Добро пожаловать&nbsp;</h1>
       </div>
     </section>
-    @if (User.IsInRole("photographer"))
+@*    @if (User.IsInRole("photographer"))
     {
         <section class="u-clearfix u-section-2" id="sec-788d">
             <div class="u-clearfix u-sheet u-sheet-1">
@@ -55,22 +56,117 @@
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">ID Публикации</td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">Путь к файлу</td>
                             </tr>
+                            @if (Model == null)
+                            {
+                                <tr style="height: 65px;">
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr style="height: 65px;">
+                                        <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationID</td>
+                                        <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationImageSource</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#sec-2a5d" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Добавить</a>
+                <a href="#sec-fcfd" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-2">удалить</a>
+            </div>
+        </section>
+        <section class="u-clearfix u-grey-10 u-section-3" id="sec-a7c1">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h3 class="u-text u-text-1">Запросы</h3>
+                <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+                    <table class="u-table-entity">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <tbody class="u-table-body u-white u-table-body-1">
+                            <tr style="height: 64px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Имя заказчика</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Номер телефона заказчика</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дата создания</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дедлайн</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Тип услуги</td>
+                            </tr>
                             <tr style="height: 65px;">
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">NameTest</td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell">PhoneTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DateTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DeadlineTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">ServiceTest</td>
                             </tr>
                             <tr style="height: 65px;">
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                             </tr>
                             <tr style="height: 65px;">
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                             </tr>
                             <tr style="height: 65px;">
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                                 <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    }*@
+        @if (User.IsInRole("photographer"))
+    {
+        <section class="u-clearfix u-section-2" id="sec-788d">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h3 class="u-align-center u-text u-text-default u-text-1">Публикации</h3>
+                <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+                    <table class="u-table-entity">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody class="u-table-body u-white u-table-body-1">
+                            <tr style="height: 64px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">ID Публикации</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Путь к файлу</td>
+                            </tr>
+                            @if (Model == null)
+                            {
+                                <tr style="height: 65px;">
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr style="height: 65px;">
+                                        <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationID</td>
+                                        <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationImageSource</td>
+                                    </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -132,7 +228,6 @@
             </div>
         </section>
     }
-
     @if (User.IsInRole("client"))
     {
         <section class="u-clearfix u-section-4" id="sec-45f5">

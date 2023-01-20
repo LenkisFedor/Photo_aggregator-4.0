@@ -1,0 +1,761 @@
+﻿@model List<Photo_aggregator.Domain.ViewModels.RequestViewModel>
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Профиль";
+}
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Добро пожаловать">
+    <meta name="description" content="">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="~/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="~/css/Профиль.css" media="screen">
+    <script class="u-script" type="text/javascript" src="~/js/jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="~/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.3.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+
+
+
+
+    <script type="application/ld+json">
+        {
+                "@@context": "http://schema.org",
+                "@@type": "Organization",
+                "name": ""
+        }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Профиль">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode" data-lang="ru">
+    <section class="u-clearfix u-section-1" id="sec-012e">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <h1 class="u-align-center u-text u-text-default u-text-1">Добро пожаловать&nbsp;</h1>
+        </div>
+    </section>
+    @*    @if (User.IsInRole("photographer"))
+    {
+    <section class="u-clearfix u-section-2" id="sec-788d">
+    <div class="u-clearfix u-sheet u-sheet-1">
+    <h3 class="u-align-center u-text u-text-default u-text-1">Публикации</h3>
+    <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+    <table class="u-table-entity">
+    <colgroup>
+    <col width="50%">
+    <col width="50%">
+    </colgroup>
+    <tbody class="u-table-body u-white u-table-body-1">
+    <tr style="height: 64px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">ID Публикации</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Путь к файлу</td>
+    </tr>
+    @if (Model == null)
+    {
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Пусто</td>
+    </tr>
+    }
+    else
+    {
+    foreach (var item in Model)
+    {
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationID</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.PublicationImageSource</td>
+    </tr>
+    }
+    }
+    </tbody>
+    </table>
+    </div>
+    <a href="#sec-2a5d" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Добавить</a>
+    <a href="#sec-fcfd" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-2">удалить</a>
+    </div>
+    </section>
+    <section class="u-clearfix u-grey-10 u-section-3" id="sec-a7c1">
+    <div class="u-clearfix u-sheet u-sheet-1">
+    <h3 class="u-text u-text-1">Запросы</h3>
+    <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+    <table class="u-table-entity">
+    <colgroup>
+    <col width="20%">
+    <col width="20%">
+    <col width="20%">
+    <col width="20%">
+    <col width="20%">
+    </colgroup>
+    <tbody class="u-table-body u-white u-table-body-1">
+    <tr style="height: 64px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Имя заказчика</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Номер телефона заказчика</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Дата создания</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Дедлайн</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">Тип услуги</td>
+    </tr>
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">NameTest</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">PhoneTest</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">DateTest</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">DeadlineTest</td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell">ServiceTest</td>
+    </tr>
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    </tr>
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    </tr>
+    <tr style="height: 65px;">
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </section>
+    }*@
+    @if (User.IsInRole("photographer"))
+    {
+        <section class="u-clearfix u-grey-10 u-section-3" id="sec-a7c1">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h3 class="u-text u-text-1">Запросы</h3>
+                <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+                    <table class="u-table-entity">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <tbody class="u-table-body u-white u-table-body-1">
+                            <tr style="height: 64px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Имя заказчика</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Номер телефона заказчика</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дата создания</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дедлайн</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Тип услуги</td>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr style="height: 65px;">
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.Cleint.ClientName</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.Cleint.ClientNumber</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.CreationDate</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.ExecutionDate</td>
+                                    <td class="u-border-2 u-border-palette-2-base u-table-cell">@item.ServiceType</td>
+                                </tr>
+                            }
+
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    }
+    @if (User.IsInRole("client"))
+    {
+        <section class="u-clearfix u-section-4" id="sec-45f5">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h3 class="u-text u-text-1">Запросы</h3>
+                <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+                    <table class="u-table-entity">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <tbody class="u-table-body u-white u-table-body-1">
+                            <tr style="height: 64px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Имя фотографа</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Почта фотографа</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дата создания</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Дедлайн</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Тип услуги</td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">NameTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">PhoneTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DateTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DeadlineTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">ServiceTest</td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="#sec-fed6" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Назначить фотосессию</a>
+            </div>
+        </section>
+    }
+
+    @if (User.IsInRole("manager"))
+    {
+
+        <section class="u-clearfix u-section-5" id="sec-d562">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h3 class="u-align-center u-text u-text-1">Фотографы</h3>
+                <div class="u-align-center u-expanded-width u-table u-table-responsive u-table-1">
+                    <table class="u-table-entity">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <tbody class="u-table-body u-white u-table-body-1">
+                            <tr style="height: 64px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">ID Фотографа</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Имя фотографа</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Фамилия фотографа</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Email</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">Опыт работы</td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">NameTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">PhoneTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DateTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">DeadlineTest</td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell">ServiceTest</td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                            <tr style="height: 65px;">
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                                <td class="u-border-2 u-border-palette-2-base u-table-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="u-list u-list-1">
+                    <div class="u-repeater u-repeater-1">
+                        <div class="u-container-style u-list-item u-repeater-item">
+                            <div class="u-container-layout u-similar-container u-container-layout-1">
+                                <a href="#sec-c15d" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Добавить</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-list-item u-repeater-item">
+                            <div class="u-container-layout u-similar-container u-container-layout-2">
+                                <a href="#sec-5624" class="u-border-none u-btn u-btn-round u-button-style u-dialog-link u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-2">
+                                    удалить<br>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    }
+
+
+
+
+
+
+
+
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3b37">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-small-text u-text u-text-variant u-text-1" data-lang-en="Sample text. Click to select the Text Element.">Sample text. Click to select the Text Element.</p>
+        </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+            <span>Website Templates</span>
+        </a>
+        <p class="u-text">
+            <span>created with</span>
+        </p>
+        <a class="u-link" href="" target="_blank">
+            <span>Website Builder Software</span>
+        </a>.
+    </section>
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-8" id="sec-2a5d">
+        <div class="u-border-1 u-border-palette-2-base u-container-style u-dialog u-opacity u-opacity-85 u-radius-13 u-shape-round u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div class="u-align-center u-form u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                        <div class="u-form-group u-form-name">
+                            <label for="name-fb80" class="u-label">Путь к файлу изображения</label>
+                            <input type="text" placeholder="~/images/image.png" id="name-fb80" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit">
+                            <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Отправить</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                        <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="232e45c154f8384630db47bd32874e70">
+                    </form>
+                </div>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+        </div>
+    </section>
+    <style>
+        .u-dialog-section-8 .u-dialog-1 {
+            width: 800px;
+            margin: 60px auto;
+        }
+
+        .u-dialog-section-8 .u-container-layout-1 {
+            padding: 30px;
+        }
+
+        .u-dialog-section-8 .u-form-1 {
+            width: 570px;
+            margin: 0 auto;
+        }
+
+        .u-dialog-section-8 .u-btn-1 {
+            background-image: none;
+        }
+
+        .u-dialog-section-8 .u-icon-1 {
+            width: 20px;
+            height: 20px;
+        }
+
+        @@media (max-width: 991px) {
+            .u-dialog-section-8 .u-dialog-1 {
+                width: 720px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .u-dialog-section-8 .u-dialog-1 {
+                width: 540px;
+            }
+
+            .u-dialog-section-8 .u-container-layout-1 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .u-dialog-section-8 .u-form-1 {
+                width: 520px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .u-dialog-section-8 .u-dialog-1 {
+                width: 340px;
+            }
+
+            .u-dialog-section-8 .u-form-1 {
+                width: 320px;
+            }
+        }</style>
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-9" id="sec-fcfd">
+        <div class="u-border-1 u-border-palette-2-base u-container-style u-dialog u-radius-11 u-shape-round u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div class="u-align-center u-border-1 u-border-palette-2-base u-form u-radius-3 u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                        <div class="u-form-group u-form-name">
+                            <label for="name-5b58" class="u-label">ID Публикации</label>
+                            <input type="text" placeholder="ID" id="name-5b58" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-align-center u-form-group u-form-submit">
+                            <a href="#" class="u-active-palette-2-dark-1 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-2 u-palette-2-base u-radius-50 u-btn-1">Отправить</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                        <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="232e45c154f8384630db47bd32874e70">
+                    </form>
+                </div>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+        </div>
+    </section>
+    <style>
+        .u-dialog-section-9 .u-dialog-1 {
+            width: 800px;
+            min-height: 250px;
+            margin: 60px auto;
+        }
+
+        .u-dialog-section-9 .u-container-layout-1 {
+            padding: 30px;
+        }
+
+        .u-dialog-section-9 .u-form-1 {
+            width: 570px;
+            margin: 10px auto 0;
+        }
+
+        .u-dialog-section-9 .u-btn-1 {
+            background-image: none;
+        }
+
+        .u-dialog-section-9 .u-icon-1 {
+            width: 20px;
+            height: 20px;
+        }
+
+        @@media (max-width: 991px) {
+            .u-dialog-section-9 .u-dialog-1 {
+                width: 720px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .u-dialog-section-9 .u-dialog-1 {
+                width: 540px;
+            }
+
+            .u-dialog-section-9 .u-container-layout-1 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .u-dialog-section-9 .u-form-1 {
+                width: 520px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .u-dialog-section-9 .u-dialog-1 {
+                width: 340px;
+            }
+
+            .u-dialog-section-9 .u-form-1 {
+                width: 320px;
+            }
+        }</style>
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-10" id="sec-fed6">
+        <div class="u-container-style u-dialog u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div class="u-form u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                        <div class="u-form-group u-form-name">
+                            <label for="name-f8d4" class="u-label">Тип услуги</label>
+                            <input type="text" placeholder="Введите Ваше имя" id="name-f8d4" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-form-email u-form-group">
+                            <label for="email-f8d4" class="u-label">Дата</label>
+                            <input type="email" placeholder="Введите Ваш email адрес" id="email-f8d4" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-form-group">
+                            <label for="message-f8d4" class="u-label">ID Фотографа</label>
+                            <input placeholder="Введите Ваше сообщение" rows="4" cols="50" id="message-f8d4" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit">
+                            <a href="#" class="u-btn u-btn-submit u-button-style">Отправить</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                        <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="232e45c154f8384630db47bd32874e70">
+                    </form>
+                </div>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+        </div>
+    </section>
+    <style>
+        .u-dialog-section-10 .u-dialog-1 {
+            width: 800px;
+            margin: 60px auto;
+        }
+
+        .u-dialog-section-10 .u-container-layout-1 {
+            padding: 30px;
+        }
+
+        .u-dialog-section-10 .u-form-1 {
+            width: 570px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .u-dialog-section-10 .u-icon-1 {
+            width: 20px;
+            height: 20px;
+        }
+
+        @@media (max-width: 991px) {
+            .u-dialog-section-10 .u-dialog-1 {
+                width: 720px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .u-dialog-section-10 .u-dialog-1 {
+                width: 540px;
+            }
+
+            .u-dialog-section-10 .u-container-layout-1 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .u-dialog-section-10 .u-form-1 {
+                width: 520px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .u-dialog-section-10 .u-dialog-1 {
+                width: 340px;
+            }
+
+            .u-dialog-section-10 .u-form-1 {
+                width: 320px;
+            }
+        }</style>
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-11" id="sec-c15d">
+        <div class="u-container-style u-dialog u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div class="u-form u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                        <div class="u-form-group u-form-name">
+                            <label for="name-fd0e" class="u-label">ID Фотографа</label>
+                            <input type="text" placeholder="Введите Ваше имя" id="name-fd0e" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-form-email u-form-group">
+                            <label for="email-fd0e" class="u-label">Имя фотографа</label>
+                            <input type="email" placeholder="Введите Ваш email адрес" id="email-fd0e" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-form-group">
+                            <label for="message-fd0e" class="u-label">Фамилия фотографа</label>
+                            <input placeholder="Введите Ваше сообщение" rows="4" cols="50" id="message-fd0e" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="text">
+                        </div>
+                        <div class="u-form-group u-form-group-4">
+                            <label for="text-b77d" class="u-label">Электронная почта</label>
+                            <input type="text" id="text-b77d" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                        </div>
+                        <div class="u-form-group u-form-group-5">
+                            <label for="text-37c3" class="u-label">Опыт</label>
+                            <input type="text" placeholder="" id="text-37c3" name="text-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit">
+                            <a href="#" class="u-btn u-btn-submit u-button-style">Отправить</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                        <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="232e45c154f8384630db47bd32874e70">
+                    </form>
+                </div>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+        </div>
+    </section>
+    <style>
+        .u-dialog-section-11 .u-dialog-1 {
+            width: 800px;
+            min-height: 250px;
+            margin: 60px auto;
+        }
+
+        .u-dialog-section-11 .u-container-layout-1 {
+            padding: 30px;
+        }
+
+        .u-dialog-section-11 .u-form-1 {
+            width: 570px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .u-dialog-section-11 .u-form-group-4 {
+            margin-left: 0;
+        }
+
+        .u-dialog-section-11 .u-form-group-5 {
+            margin-left: 0;
+        }
+
+        .u-dialog-section-11 .u-icon-1 {
+            width: 20px;
+            height: 20px;
+        }
+
+        @@media (max-width: 991px) {
+            .u-dialog-section-11 .u-dialog-1 {
+                width: 720px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .u-dialog-section-11 .u-dialog-1 {
+                width: 540px;
+            }
+
+            .u-dialog-section-11 .u-container-layout-1 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .u-dialog-section-11 .u-form-1 {
+                width: 520px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .u-dialog-section-11 .u-dialog-1 {
+                width: 340px;
+            }
+
+            .u-dialog-section-11 .u-form-1 {
+                width: 320px;
+            }
+        }</style>
+    <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-12" id="sec-5624">
+        <div class="u-container-style u-dialog u-white u-dialog-1">
+            <div class="u-container-layout u-container-layout-1">
+                <div class="u-form u-form-1">
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                        <div class="u-form-group u-form-name">
+                            <label for="name-3a66" class="u-label">ID Фотографа</label>
+                            <input type="text" placeholder="Введите Ваше имя" id="name-3a66" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                        </div>
+                        <div class="u-align-left u-form-group u-form-submit">
+                            <a href="#" class="u-btn u-btn-submit u-button-style">Отправить</a>
+                            <input type="submit" value="submit" class="u-form-control-hidden">
+                        </div>
+                        <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                        <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                        <input type="hidden" value="" name="recaptchaResponse">
+                        <input type="hidden" name="formServices" value="232e45c154f8384630db47bd32874e70">
+                    </form>
+                </div>
+            </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+        </div>
+    </section>
+    <style>
+        .u-dialog-section-12 .u-dialog-1 {
+            width: 800px;
+            min-height: 250px;
+            margin: 60px auto;
+        }
+
+        .u-dialog-section-12 .u-container-layout-1 {
+            padding: 30px;
+        }
+
+        .u-dialog-section-12 .u-form-1 {
+            width: 570px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .u-dialog-section-12 .u-icon-1 {
+            width: 20px;
+            height: 20px;
+        }
+
+        @@media (max-width: 991px) {
+            .u-dialog-section-12 .u-dialog-1 {
+                width: 720px;
+            }
+        }
+
+        @@media (max-width: 767px) {
+            .u-dialog-section-12 .u-dialog-1 {
+                width: 540px;
+            }
+
+            .u-dialog-section-12 .u-container-layout-1 {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .u-dialog-section-12 .u-form-1 {
+                width: 520px;
+            }
+        }
+
+        @@media (max-width: 575px) {
+            .u-dialog-section-12 .u-dialog-1 {
+                width: 340px;
+            }
+
+            .u-dialog-section-12 .u-form-1 {
+                width: 320px;
+            }
+        }</style>
+</body>
+</html>

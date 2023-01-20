@@ -1,14 +1,28 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Photo_aggregator.DAL;
+using Photo_aggregator.Service.Interfaces;
 
 namespace Photo_aggregator.Controllers
 {
     public class ProfileController : Controller
     {
-        // GET: ProfileController
-        public ActionResult Index()
+        private readonly IProfileService _profileService;
+
+        private readonly Photo_aggregatorContext context;
+
+        public ProfileController(IProfileService profileService, Photo_aggregatorContext context)
         {
-            return View();
+            _profileService = profileService;
+            this.context = context;
+        }
+        public ActionResult PhotographerProfile()
+        {
+            var requests = context.Requests
+                .Where(req => req.PhotographerId == (context.Users.First(user => user.UserLogin == User.Identity.Name).UserId))
+                .ToList();
+
+            return View(requests);
         }
 
         // GET: ProfileController/Details/5

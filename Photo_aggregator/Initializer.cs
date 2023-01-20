@@ -19,6 +19,7 @@ namespace Photo_aggregator
 		{
 			services.AddScoped<IPhotographerService, PhotographerService>();
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<IProfileService, ProfileService>();
         }
 	}
 }

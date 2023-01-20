@@ -45,9 +45,25 @@
                             <li class="u-nav-item">
                                 <a class="u-button-style u-nav-link" method="post" asp-controller="Account" asp-action="Logout">Выход</a>
                             </li>
-                            <li class="u-nav-item">
-                                <a class="u-button-style u-nav-link" method="post" asp-controller="Home" asp-action="Profile">Профиль</a>
-                            </li>
+                            if (User.IsInRole("photographer"))
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="PhotographerProfile">Профиль</a>
+                                </li>
+                            }
+                            if (User.IsInRole("manager"))
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="ManagerProfile">Профиль</a>
+                                </li>
+                            }
+                            if (User.IsInRole("client"))
+                            {
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="CleintProfile">Профиль</a>
+                                </li>
+                            }
+
                         }
 
                     </ul>
@@ -75,9 +91,24 @@
 
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <li class="u-nav-item">
-                                        <a class="u-button-style u-nav-link" asp-area="" asp-controller="Home" asp-action="Profile">Аккаунт</a>
-                                    </li>
+                                    if (User.IsInRole("photographer"))
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="PhotographerProfile">Профиль</a>
+                                        </li>
+                                    }
+                                    if (User.IsInRole("manager"))
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="ManagerProfile">Профиль</a>
+                                        </li>
+                                    }
+                                    if (User.IsInRole("client"))
+                                    {
+                                        <li class="u-nav-item">
+                                            <a class="u-button-style u-nav-link" method="post" asp-controller="Profile" asp-action="CleintProfile">Профиль</a>
+                                        </li>
+                                    }
                                     <li class="u-nav-item">
                                         <a class="u-button-style u-nav-link" method="post" asp-controller="Account" asp-action="Logout">Выход</a>
                                     </li>
