@@ -1,0 +1,60 @@
+[{
+  "_id": 123,
+  "name": "Александр Иванов",
+  "email": "ivanov@example.com",
+  "phone": "+123456789",
+  "location": "Москва",
+  "specialization": [
+    "портрет",
+    "свадебная"
+  ],
+  "experience": 5
+},
+{
+  "_id": 789,
+  "name": "Екатерина Петрова",
+  "email": "petrova@example.com",
+  "phone": "+987654321",
+  "location": "Санкт-Петербург",
+  "specialization": [
+    "мода",
+    "реклама"
+  ],
+  "experience": 8
+},
+{
+  "_id": 222,
+  "name": "Иван Сидоров",
+  "email": "sidorov@example.com",
+  "phone": "+123098456",
+  "location": "Новосибирск",
+  "specialization": [
+    "события",
+    "портрет"
+  ],
+  "experience": 3
+},
+{
+  "_id": 444,
+  "name": "Мария Смирнова",
+  "email": "smirnova@example.com",
+  "phone": "+321654987",
+  "location": "Екатеринбург",
+  "specialization": [
+    "спорт",
+    "природа"
+  ],
+  "experience": 6
+},
+{
+  "_id": 888,
+  "name": "Алексей Кузнецов",
+  "email": "kuznetsov@example.com",
+  "phone": "+987213654",
+  "location": "Краснодар",
+  "specialization": [
+    "портрет",
+    "семейная"
+  ],
+  "experience": 10
+}]

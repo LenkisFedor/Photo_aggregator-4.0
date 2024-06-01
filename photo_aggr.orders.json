@@ -1,0 +1,44 @@
+[{
+  "_id": 1,
+  "client_id": 1,
+  "photographer_id": "123",
+  "date_requested": "2023-05-10",
+  "type": "портрет",
+  "location": "Нью-Йорк",
+  "status": "в обработке",
+  "deadline": "2023-06-01",
+  "final_price": 15000
+},
+{
+  "_id": 2,
+  "client_id": 2,
+  "photographer_id": "789",
+  "date_requested": "2023-07-05",
+  "type": "мода",
+  "location": "Лос-Анджелес",
+  "status": "в обработке",
+  "deadline": "2023-08-01",
+  "final_price": 20000
+},
+{
+  "_id": 3,
+  "client_id": 3,
+  "photographer_id": "222",
+  "date_requested": "2023-04-05",
+  "type": "событие",
+  "location": "Чикаго",
+  "status": "выполнен",
+  "deadline": "2023-05-01",
+  "final_price": 18000
+},
+{
+  "_id": 4,
+  "client_id": 4,
+  "photographer_id": "444",
+  "date_requested": "2023-03-05",
+  "type": "спорт",
+  "location": "Хьюстон",
+  "status": "отменен",
+  "deadline": "2023-04-01",
+  "final_price": 16000
+}]

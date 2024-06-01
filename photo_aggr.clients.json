@@ -1,0 +1,112 @@
+[{
+  "_id": 1,
+  "name": "Джон Смит",
+  "email": "johnsmith@example.com",
+  "phone": "+123456789",
+  "location": "Нью-Йорк",
+  "preferences": [
+    "портрет",
+    "свадебная"
+  ],
+  "history": [
+    {
+      "photographer_id": "123",
+      "date": "2023-05-15",
+      "type": "портрет"
+    }
+  ]
+},
+{
+  "_id": 2,
+  "name": "Джейн Доу",
+  "email": "janedoe@example.com",
+  "phone": "+987654321",
+  "location": "Лос-Анджелес",
+  "preferences": [
+    "мода",
+    "коммерческая"
+  ],
+  "history": [
+    {
+      "photographer_id": "789",
+      "date": "2023-07-10",
+      "type": "мода"
+    }
+  ]
+},
+{
+  "_id": 3,
+  "name": "Алиса Семенова",
+  "email": "alisasemenova@example.com",
+  "phone": "+123098456",
+  "location": "Чикаго",
+  "preferences": [
+    "событие",
+    "портрет"
+  ],
+  "history": []
+},
+{
+  "_id": 4,
+  "name": "Боб Макаров",
+  "email": "bobmakarov@example.com",
+  "phone": "+321654987",
+  "location": "Хьюстон",
+  "preferences": [
+    "спорт",
+    "дикая природа"
+  ],
+  "history": [
+    {
+      "photographer_id": "444",
+      "date": "2023-03-12",
+      "type": "спорт"
+    },
+    {
+      "photographer_id": "444",
+      "date": "2023-05-19",
+      "type": "дикая природа"
+    }
+  ]
+},
+{
+  "_id": 5,
+  "name": "Карина Иванова",
+  "email": "karinaivanova@example.com",
+  "phone": "+987213654",
+  "location": "Филадельфия",
+  "preferences": [
+    "портрет",
+    "семейная"
+  ],
+  "history": [
+    {
+      "photographer_id": "888",
+      "date": "2023-02-14",
+      "type": "портрет"
+    }
+  ]
+},
+{
+  "_id": 6,
+  "name": "Егор Петров",
+  "email": "egorpetrov@example.com",
+  "phone": "+654321987",
+  "location": "Сан-Антонио",
+  "preferences": [
+    "еда",
+    "продуктовая"
+  ],
+  "history": [
+    {
+      "photographer_id": "222",
+      "date": "2023-01-10",
+      "type": "еда"
+    },
+    {
+      "photographer_id": "222",
+      "date": "2023-07-15",
+      "type": "продуктовая"
+    }
+  ]
+}]

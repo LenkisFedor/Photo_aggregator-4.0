@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce4d"
+  },
+  "name": "John Smith",
+  "role": "Менеджер по работе с клиентами",
+  "email": "johnsmith@example.com",
+  "phone": "+123456789",
+  "department": "Отдел продаж"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce4e"
+  },
+  "name": "Alice Johnson",
+  "role": "Администратор",
+  "email": "alicejohnson@example.com",
+  "phone": "+987654321",
+  "department": "Администрация"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce4f"
+  },
+  "name": "Bob Brown",
+  "role": "Программист",
+  "email": "bobbrown@example.com",
+  "phone": "+987123456",
+  "department": "Отдел разработки"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce50"
+  },
+  "name": "Eva Green",
+  "role": "Дизайнер",
+  "email": "evagreen@example.com",
+  "phone": "+654321987",
+  "department": "Отдел дизайна"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce51"
+  },
+  "name": "Michael White",
+  "role": "Техническая поддержка",
+  "email": "michaelwhite@example.com",
+  "phone": "+123987654",
+  "department": "Техническая поддержка"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce52"
+  },
+  "name": "Olivia Miller",
+  "role": "Менеджер по работе с клиентами",
+  "email": "oliviamiller@example.com",
+  "phone": "+789123456",
+  "department": "Отдел продаж"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce53"
+  },
+  "name": "David Lee",
+  "role": "Администратор",
+  "email": "davidlee@example.com",
+  "phone": "+987789456",
+  "department": "Администрация"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce54"
+  },
+  "name": "Emma Davis",
+  "role": "Программист",
+  "email": "emmadavis@example.com",
+  "phone": "+987456123",
+  "department": "Отдел разработки"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce55"
+  },
+  "name": "Sophia Wilson",
+  "role": "Дизайнер",
+  "email": "sophiawilson@example.com",
+  "phone": "+987654789",
+  "department": "Отдел дизайна"
+},
+{
+  "_id": {
+    "$oid": "665b294439f28dc5cdcdce56"
+  },
+  "name": "James Thompson",
+  "role": "Техническая поддержка",
+  "email": "jamesthompson@example.com",
+  "phone": "+123456987",
+  "department": "Техническая поддержка"
+}]
